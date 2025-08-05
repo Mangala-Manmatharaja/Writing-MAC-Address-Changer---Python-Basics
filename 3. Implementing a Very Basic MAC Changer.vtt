@@ -1,0 +1,196 @@
+WEBVTT
+
+00:01.030 --> 00:01.690
+OK.
+
+00:01.730 --> 00:07.250
+So from the previous lectures we know how to change the MAC address using these three commands.
+
+00:07.250 --> 00:11.400
+By doing it can take Landseer down if can think Lan's your own hash table.
+
+00:11.450 --> 00:17.990
+Ethar followed by the MAC address that we want to change our MAC address to and then we do if conflict
+
+00:17.990 --> 00:21.170
+Landseer up to enable our interface.
+
+00:21.770 --> 00:27.940
+We also learned how to execute system commands from Python using the subprocess module.
+
+00:28.040 --> 00:35.720
+So we're going to combine these two things and write a program that'll change the MAC address for us.
+
+00:35.720 --> 00:38.570
+So first of all I'm just going to close this from here.
+
+00:39.860 --> 00:48.220
+And then all we have to do right now is change ifconfig in here with the commands that we executed here.
+
+00:48.830 --> 00:57.510
+So the first command that we want to run is going to be ifconfig line 0 down.
+
+00:57.930 --> 01:04.050
+Then you can actually do control the to locate the line that you're currently at.
+
+01:04.260 --> 01:06.940
+So I'm going to do control the right here.
+
+01:06.980 --> 01:11.460
+Now as you can see I have a new line exactly similar to the previous line.
+
+01:11.880 --> 01:13.310
+And in here we're going to do.
+
+01:13.310 --> 01:21.480
+Ifconfig line zero haste w Ethar and then input the MAC address.
+
+01:21.480 --> 01:33.410
+And let's set it this time 2 0 0 1 1 2 2 3 3 4 4 and we'll set it to 6 6 this time so we can differentiate
+
+01:33.410 --> 01:35.230
+it from the previous one.
+
+01:35.810 --> 01:43.130
+And finally I'm going to do Control D again because I'm lazy so I guess the line for me and the final
+
+01:43.130 --> 01:48.590
+command is going to be ifconfig lands you grow up to enable the interface.
+
+01:48.830 --> 01:50.020
+And that's it we're done.
+
+01:50.120 --> 01:51.270
+Very very simple.
+
+01:51.470 --> 01:57.350
+So very similar to what we did before we're importing the subprocess module first and then we're using
+
+01:57.350 --> 02:03.530
+the same function which is the call function which allows us to run system commands and we're on Linux
+
+02:03.620 --> 02:09.170
+so we can run any Linux commands and we know that these commands allow us to change the MAC address
+
+02:09.590 --> 02:16.950
+we put the interface down first then we set the MAC address that we want to use by do and if config
+
+02:16.950 --> 02:24.110
+line zero table you are followed by the MAC address and then we do if config lands zero up to enable
+
+02:24.110 --> 02:26.020
+the MAC address.
+
+02:26.030 --> 02:32.600
+Now if we execute this script from terminal the script should change the MAC address for us and we won't
+
+02:32.600 --> 02:35.470
+have to run these three commands to do it.
+
+02:35.930 --> 02:39.720
+So I can run it by going to run here and then run.
+
+02:39.860 --> 02:41.120
+But I actually don't want to do that.
+
+02:41.120 --> 02:45.860
+I want to run it from a terminal because I actually like running stuff from terminal more because I
+
+02:45.860 --> 02:47.350
+can run other commands.
+
+02:47.570 --> 02:54.390
+And so that we can run if config after it and make sure that the MAC address did actually change.
+
+02:54.470 --> 03:00.830
+So I'm going to go to my terminal and I'm going to navigate to where this project is stored.
+
+03:00.860 --> 03:07.010
+Now if we go up here just for a second and hope we're over here you can see that this project is stored
+
+03:07.070 --> 03:11.830
+in my user home PI charm Mark changer.
+
+03:12.080 --> 03:15.830
+So we're going to do see the pie chart projects.
+
+03:15.980 --> 03:22.090
+And by the way you can just press tab as your type in a command and it'll autocomplete for you.
+
+03:22.100 --> 03:28.760
+So all I have to do is type mark and tab and as you can see it automatically auto completes the match
+
+03:28.760 --> 03:29.970
+changer.
+
+03:30.620 --> 03:37.010
+Now if I do ls here to list all the files you can see I have my marked change or script in here and
+
+03:37.010 --> 03:38.510
+there on the script as usual.
+
+03:38.510 --> 03:41.030
+All you have to do is do Python.
+
+03:41.050 --> 03:47.820
+Change or a dot P Y had enter and this didn't show us any errors.
+
+03:47.830 --> 03:49.060
+So this is very good.
+
+03:49.060 --> 03:51.500
+This means that things did actually work.
+
+03:51.790 --> 04:00.990
+And now if we do if conflict line 0 you can see that our mac address got changed to 0 0 1 1 2 2 3 3
+
+04:00.990 --> 04:04.670
+4 4 6 6 instead of 5 5.
+
+04:04.920 --> 04:12.660
+So this means that our code in here worked and we managed to execute these three system commands through
+
+04:12.750 --> 04:15.270
+our Python script.
+
+04:15.270 --> 04:16.320
+Now I know what you're thinking.
+
+04:16.320 --> 04:17.520
+This is very simple.
+
+04:17.520 --> 04:23.850
+All we're doing is just running system commands doesn't really show the power of Python but we're still
+
+04:23.850 --> 04:26.050
+at the very start of the lectures.
+
+04:26.130 --> 04:32.700
+I'm actually going to spend a little bit more time on this crypt to cover a lot of basics about Python
+
+04:32.700 --> 04:33.740
+programming.
+
+04:34.170 --> 04:38.860
+So in the next lectures we're going to be building up on this very simple script.
+
+04:39.000 --> 04:46.960
+And as we do that I'm going to teach you conditional statements variable's rejects and more.
+
+04:47.070 --> 04:50.130
+And this is the style I'm going to follow throughout the whole course.
+
+04:50.130 --> 04:55.830
+We're going to be first of all create an escrowed that does something useful and then we'll build up
+
+04:55.920 --> 04:56.760
+on that.
+
+04:56.820 --> 05:02.430
+So this won't be the only script that we create but we're actually spent some time working and adding
+
+05:02.430 --> 05:09.250
+features to the script because as I add features I want to cover Python basics so that I can teach you
+
+05:09.270 --> 05:15.700
+more advanced Python programming in the next sections and build more advanced Python programs.
