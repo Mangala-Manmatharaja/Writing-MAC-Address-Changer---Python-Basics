@@ -1,0 +1,349 @@
+WEBVTT
+
+00:01.550 --> 00:12.310
+OK so now we have a script that can change the MAC address of land 0 2 0 0 0 1 1 2 2 3 3 4 4 6 6.
+
+00:12.330 --> 00:18.680
+Now as you can see this is not a great script because all we can use it for is to change the MAC address
+
+00:18.680 --> 00:22.080
+of land zero to this specific MAC address.
+
+00:23.350 --> 00:30.550
+So we can't use it to change the MAC address of any other interface and we can't change it to any other
+
+00:30.610 --> 00:36.430
+MAC address other than this one unless you come in and manually change the code here which is not a
+
+00:36.430 --> 00:38.620
+good practice.
+
+00:38.620 --> 00:45.400
+So a better implementation would be to use variables for the places that vary.
+
+00:45.730 --> 00:47.230
+So we have the last zero.
+
+00:47.240 --> 00:54.600
+Here is a variable the value of it can change depending on the interface that the person wants to use.
+
+00:54.730 --> 01:00.250
+So if you change the MAC address of each Seijiro you can set it zero if you want to change the MAC address
+
+01:00.310 --> 01:01.180
+of line 1.
+
+01:01.210 --> 01:05.920
+If you are to wireless interfaces then you can change for one.
+
+01:06.040 --> 01:12.860
+Therefore this value right here is a variable and it's better to use a variable for that.
+
+01:12.880 --> 01:15.060
+Same goes for the MAC address here.
+
+01:15.460 --> 01:21.670
+As described before if you're actually using this in real life you'd want to be always using a different
+
+01:21.670 --> 01:27.180
+MAC address and you want always want to use the same MAC address over and over.
+
+01:27.580 --> 01:33.960
+Therefore it will make sense to use a variable for the value of the MAC address in here as well.
+
+01:34.000 --> 01:41.500
+And what I mean by a variable is a value that can be easily changed through the user input or through
+
+01:41.500 --> 01:43.440
+the program itself.
+
+01:44.140 --> 01:51.790
+Now variables are used everywhere in programming in all programming languages not only in Python and
+
+01:51.790 --> 01:52.960
+they are very useful.
+
+01:52.960 --> 01:56.430
+You can't really write a program without a variable.
+
+01:56.830 --> 02:04.130
+So technically speaking a variable as a location in memory that contains a certain value.
+
+02:04.480 --> 02:12.970
+But what we actually mean by that is it's a word or a name that stores a value something very similar
+
+02:12.970 --> 02:19.420
+to when we use x and y in math we always used variables and we always got questions in exams to find
+
+02:19.450 --> 02:25.450
+X and solve equations and all that and all the letters in these equations are variables.
+
+02:25.870 --> 02:33.130
+So you can think of a variable as a box that contains a certain value or as a container that contains
+
+02:33.190 --> 02:35.410
+a certain value.
+
+02:35.420 --> 02:39.960
+Now very simple example that I have here is we can just do in Python.
+
+02:40.250 --> 02:45.000
+Set X equals 1 then X will hold the value of 1.
+
+02:45.290 --> 02:51.430
+So you can say Y is equal to x plus X that means y is equal to one plus one.
+
+02:51.470 --> 02:54.130
+Then why is going to have a value of two.
+
+02:54.170 --> 02:58.610
+And then you can print Y and you'll see two on screen.
+
+02:58.610 --> 03:04.430
+Now this is very simple and not useful and that's why programming can be boring if you don't have a
+
+03:04.430 --> 03:05.220
+purpose.
+
+03:05.240 --> 03:12.750
+So we're not going to be doing this what we are going to do is adopt this in our cool script in here.
+
+03:13.010 --> 03:19.480
+So we want to learn zero to be a variable and we want the mark to be a variable.
+
+03:19.940 --> 03:25.840
+So all we have to do is before we use these variables type them in here.
+
+03:26.000 --> 03:30.170
+So we're going to create our first variable and to create that.
+
+03:30.230 --> 03:32.570
+All you have to do is just type its name.
+
+03:32.810 --> 03:37.770
+Now in math we're used to use x and y when we're using variables.
+
+03:37.910 --> 03:41.060
+You can do that with Python but it's not a good practice.
+
+03:41.060 --> 03:48.260
+It's better to name your variables meaningful names so names that are relevant to the value that's stored
+
+03:48.500 --> 03:56.210
+in that variable you can use letters and numbers and variables but it has to start with a letter or
+
+03:56.210 --> 03:57.680
+an underscore.
+
+03:57.740 --> 04:03.840
+You can use the underscore anywhere within the variable name and the names are case sensitive.
+
+04:04.250 --> 04:08.180
+So since we want to use meaningful names.
+
+04:08.180 --> 04:15.510
+Very good variable name would be interface to hold the value for the interface.
+
+04:15.570 --> 04:18.060
+Now our interface is like zero.
+
+04:18.060 --> 04:22.280
+So we're going to initialize that to line zero.
+
+04:22.280 --> 04:29.480
+Now we have a variable or a box named interface and it has a value of zero.
+
+04:29.480 --> 04:37.110
+So everywhere we use line zero we can just substitute interface and Python as it interprets the code.
+
+04:37.170 --> 04:44.350
+It'll replace any occurrence of interface with the value that we set it to which is land zero.
+
+04:44.660 --> 04:50.840
+Now before I use that in the code here because this is something new I'm going to use it in a print
+
+04:50.840 --> 04:51.700
+statement.
+
+04:51.860 --> 04:58.070
+It's actually a really good idea as you go along with coding to print stuff as you're programming so
+
+04:58.070 --> 05:01.280
+you can see what's the value for that variable.
+
+05:01.340 --> 05:03.850
+At this line or at this moment of time.
+
+05:04.070 --> 05:10.610
+So it's a good practice and it'll actually make you understand the idea of variables more and you'll
+
+05:10.610 --> 05:12.490
+get more comfortable with it.
+
+05:13.040 --> 05:19.850
+So first of all I'm just going to comment all of this basically commenting a line means that we're telling
+
+05:19.850 --> 05:25.450
+Python to ignore this line and don't treat it as code to do that.
+
+05:25.460 --> 05:29.660
+All we have to do is just put the high symbol before the line.
+
+05:29.660 --> 05:33.710
+Or you can press control and forward slash.
+
+05:34.040 --> 05:41.550
+And that will automatically add comments to multiple lines so whenever we run this code all of this
+
+05:41.550 --> 05:42.910
+will be ignored.
+
+05:43.350 --> 05:50.720
+And what I want to do in here I actually want to use a very simple print statement and inside it we're
+
+05:50.720 --> 05:59.230
+just going to give notification to the user and we're just going to say changing my address for and
+
+05:59.230 --> 06:04.050
+then I want to say the name of the interface that the script will work on.
+
+06:04.390 --> 06:12.370
+So we have to use the interface variable in here and to do that all we have to do is append that this
+
+06:12.370 --> 06:14.250
+variable to the string.
+
+06:14.530 --> 06:21.430
+So like we said before any sequence of characters enclosed between two quotations is treated as a string
+
+06:21.460 --> 06:24.020
+or it's called a string in Python.
+
+06:24.220 --> 06:29.700
+Now since our variable is a string as well as you can see it's a sequence of characters as well.
+
+06:29.740 --> 06:35.960
+So all you have to do in Python is just pull applause followed by the the variable name which is interface
+
+06:38.250 --> 06:38.730
+and that's it.
+
+06:38.730 --> 06:41.640
+Now when we interpret this let's go down and do it.
+
+06:41.640 --> 06:48.780
+So for just do Python Mike changer that way you'll see it's going to print for me changing my address
+
+06:48.780 --> 06:50.080
+for.
+
+06:50.440 --> 06:58.360
+And instead of interface here it replaced it with the value that we have here which is like zero.
+
+06:58.650 --> 07:06.420
+Now this is cool but if you look at our code here and remember what we said we also want to use a variable
+
+07:06.540 --> 07:08.630
+for the mac address value.
+
+07:09.000 --> 07:22.610
+So let's do that let's call this variable now Neumark and let's said that 2 0 0 1 1 2 2 3 3 4 4 and
+
+07:22.610 --> 07:27.810
+we'll set it to 7 7 this time so different than the last time.
+
+07:27.890 --> 07:33.740
+Now again simply by doing this we created a new variable or a new box or a new container that's called
+
+07:33.740 --> 07:39.990
+Neumark and its value is a sequence of characters enclosed between two quotations.
+
+07:40.010 --> 07:41.690
+So it's a string.
+
+07:42.230 --> 07:47.930
+Now let's append that to our string in here so we have the string in the print statement and I want
+
+07:47.930 --> 07:54.780
+to say changing MAC address for interface or for line 0 2 and then put the value of the Mac which we're
+
+07:54.810 --> 07:58.390
+going to change the current MAC address to.
+
+07:58.400 --> 08:03.800
+So again just to append the string all we have to do is just put applause followed by the rest of the
+
+08:03.800 --> 08:11.300
+string which is we're saying change the MAC address for interface 2 and then we want to put the value
+
+08:11.300 --> 08:14.290
+of the of the Neumark address again.
+
+08:14.300 --> 08:21.130
+All we have to do is put a applause followed by the new mark and that's it.
+
+08:21.200 --> 08:28.460
+So all we're saying is change your MAC address for we close the quotation and then we put our variable
+
+08:28.460 --> 08:31.860
+because if we put the variable inside the quotation.
+
+08:31.940 --> 08:36.950
+Python will think this is part of the string and it'll just printed as interface.
+
+08:37.070 --> 08:40.970
+It won't substitute its value with line 0.
+
+08:40.970 --> 08:43.880
+Same goes with using the new Mac in here.
+
+08:43.880 --> 08:51.740
+If you put that inside the quotation it'll just treat that as a string and it won't print its value.
+
+08:51.740 --> 08:59.670
+So now if we go down and just run our code again as you can see it's printin changing MAC address for
+
+08:59.670 --> 09:06.350
+line zero so substituted the value of interface with zero with the value that we initialized it to.
+
+09:06.740 --> 09:09.570
+And it's changing it to the Neumark again.
+
+09:09.680 --> 09:14.410
+It's substituting the mike variable with this.
+
+09:14.510 --> 09:19.970
+Now just as a quick test I know I spend a bit too much time on this but just as a quick test if I put
+
+09:19.970 --> 09:28.830
+the Neumark here inside the string and run this you'll see that the interface will be substituted with
+
+09:28.830 --> 09:30.660
+the value of land 0.
+
+09:30.660 --> 09:33.930
+But Python will not know that Neumark is a variable.
+
+09:33.960 --> 09:42.790
+It all just printed as part of the string because we put it inside the quotation mark so that's it for
+
+09:42.790 --> 09:43.030
+now.
+
+09:43.030 --> 09:45.760
+Just a quick introduction to variables.
+
+09:45.970 --> 09:51.370
+I wanted to show you how to use it in a print statement and get into the habit of printing the value
+
+09:51.670 --> 09:57.160
+of variables because when you have longer code it might be a smart idea to print it as you write in
+
+09:57.160 --> 10:03.670
+the code to make sure that its value is still what you want it to be and the next lecture will use the
+
+10:03.700 --> 10:10.180
+variables that we just created in the code so that we can change the MAC address and the interface quickly
+
+10:10.270 --> 10:11.410
+using these variables.
