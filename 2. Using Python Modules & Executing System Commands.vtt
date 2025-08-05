@@ -1,0 +1,358 @@
+WEBVTT
+
+00:01.390 --> 00:06.250
+OK now we know what a MAC address is and how to change it.
+
+00:06.790 --> 00:14.620
+What we want to do now is write python program or script that will do this for us automatically.
+
+00:14.620 --> 00:18.080
+Now I know you're thinking right now that you don't know anything about Python.
+
+00:18.100 --> 00:21.040
+How are you going to write a program that will do this.
+
+00:21.040 --> 00:25.740
+Now like I said learning programming can get boring if you don't have a purpose.
+
+00:25.750 --> 00:28.650
+That's why I want to teach this course by example.
+
+00:28.810 --> 00:31.830
+So we're going to start programming from the start.
+
+00:32.020 --> 00:38.860
+And as we program I'm going to teach you programming concepts and how to program in general.
+
+00:38.860 --> 00:42.400
+So this is the first proper programming lecture that we're doing.
+
+00:42.460 --> 00:48.190
+But we're actually going to build a very simple script that'll change the MAC address for us.
+
+00:48.190 --> 00:54.600
+Now from what you know so far all you have to do to change the MAC address is run these commands.
+
+00:54.640 --> 01:01.000
+So if you want to write a program that does this the first thing that you need to do is be able to execute
+
+01:01.090 --> 01:03.400
+Linux commands through that program.
+
+01:03.400 --> 01:09.190
+We want our program to be able to execute terminal commands the same way that we are executing them
+
+01:09.190 --> 01:11.970
+here by typing the commands manually.
+
+01:12.400 --> 01:17.710
+Now anything that you can think of there is probably a way to do it in python or there is probably a
+
+01:17.710 --> 01:20.760
+python module that does that.
+
+01:20.770 --> 01:28.070
+So in order to execute system commands we have a module called subprocess in Python.
+
+01:28.300 --> 01:31.270
+Now subprocess can execute any system commands.
+
+01:31.270 --> 01:33.550
+It doesn't have to be Linux commands.
+
+01:33.550 --> 01:39.130
+The difference is if you run the script from Windows if it works it'll allow you to execute Windows
+
+01:39.130 --> 01:39.750
+commands.
+
+01:39.850 --> 01:45.150
+If you run the script from Mike it'll allow you to execute my commands if you're running from Linux.
+
+01:45.250 --> 01:47.540
+It'll allow you to run Linux commands.
+
+01:47.560 --> 01:52.690
+Now since we're running our script from Linux then we can run the commands that we learned in the previous
+
+01:52.690 --> 01:58.390
+lecture and be able to change our mac address through a Python program.
+
+01:58.390 --> 02:03.380
+Now using the module is very simple and we're gonna talk about that in a minute.
+
+02:03.700 --> 02:08.330
+But before I show you how to use it I want to show you the module page.
+
+02:08.470 --> 02:12.530
+Now for every Python module there is a documentation.
+
+02:12.550 --> 02:15.670
+The documentation talks about what the module does.
+
+02:15.670 --> 02:23.080
+The functions included in this module and how to use any of these functions and examples and even good
+
+02:23.080 --> 02:25.240
+practices and things to avoid.
+
+02:25.240 --> 02:32.350
+So it's a very good idea to learn how to go over the documentation and learn what modules do because
+
+02:32.850 --> 02:39.220
+there is no course online or anywhere that covers Python completely there is no way someone can cover
+
+02:39.250 --> 02:39.960
+everything.
+
+02:40.090 --> 02:47.620
+So all we can do is cover Python for hacking for example or Python for data processing or even maybe
+
+02:47.620 --> 02:51.020
+a general Python course but there is no way to cover everything.
+
+02:51.040 --> 02:56.890
+So you need to get into the habit of reading and experimenting and learning how modules work.
+
+02:56.890 --> 03:02.470
+Once you get comfortable with using a number of modules use others is very easy and you'd be able to
+
+03:02.470 --> 03:07.090
+just read over the documentation and figure out how to use the modules.
+
+03:07.120 --> 03:11.980
+Now we obviously don't expect you to know this right now but by the end of the course it should be very
+
+03:11.980 --> 03:13.120
+easy for you.
+
+03:13.510 --> 03:17.190
+So the module that we want to use is called subprocess.
+
+03:17.390 --> 03:21.180
+And like I said this module allows us to run system commands.
+
+03:21.580 --> 03:28.930
+Now each module contains a number of functions that do something similar for example the subprocess
+
+03:28.930 --> 03:35.440
+module the one that we want to use contains a number of functions all of which allow us to run system
+
+03:35.440 --> 03:37.940
+commands but in different ways.
+
+03:38.050 --> 03:42.920
+For example some of them will run commands in the background some of them will run commands.
+
+03:42.930 --> 03:50.140
+In the foreground and wait for the command to finish executing and so on the function that we want to
+
+03:50.140 --> 03:52.690
+use today is called Call.
+
+03:52.990 --> 03:58.560
+So the module name is subprocess and the function is called Call.
+
+03:58.600 --> 04:04.000
+This function allows to run system commands but it runs the command in the foreground.
+
+04:04.000 --> 04:09.640
+It doesn't run it in the background it doesn't run it in a different thread and it waits for the command
+
+04:09.700 --> 04:13.570
+to finish executing before it moves to the next line.
+
+04:13.570 --> 04:19.720
+This is very important because we don't want our script to exit or continue doing other stuff while
+
+04:19.780 --> 04:22.110
+it's still trying to change my mac address.
+
+04:22.120 --> 04:27.070
+I wanted to change the MAC address finished change in it and then do other stuff.
+
+04:27.070 --> 04:33.760
+So that's why we're using the call because it will not execute anything else until the command that
+
+04:33.760 --> 04:36.910
+I give it finishes executing.
+
+04:36.910 --> 04:42.850
+Now if we scroll down you can see that there is two ways of using this function.
+
+04:42.910 --> 04:47.770
+We're going to use the second way in here and then we're going to go and use the first one in a different
+
+04:47.770 --> 04:49.840
+lecture and talk about the differences.
+
+04:51.300 --> 04:55.070
+So for the second way in here I also have the example here.
+
+04:55.200 --> 05:01.590
+All you have to do is just type subprocess dot call followed by the command that you want to run followed
+
+05:01.590 --> 05:03.640
+by Shell equals true.
+
+05:04.020 --> 05:06.260
+So it's very very simple.
+
+05:06.270 --> 05:12.360
+Now let's have a very simple example of the subprocess module before we actually use it to change the
+
+05:12.360 --> 05:15.650
+MAC address just to see how the module works.
+
+05:15.990 --> 05:25.770
+So I'm just going to go to my machine and I have my PI charm in here and I have already created a project
+
+05:25.770 --> 05:27.180
+called Mike changer.
+
+05:27.420 --> 05:36.930
+So I'm just going to create a new file and I created a python file and I'm going to call it my change
+
+05:36.920 --> 05:37.650
+or do it.
+
+05:37.700 --> 05:37.970
+Why
+
+05:41.940 --> 05:42.450
+OK.
+
+05:42.580 --> 05:44.720
+I'm going to add the Shabangu at the top.
+
+05:47.580 --> 05:52.300
+And then the first thing that I need to do is import the subprocess module.
+
+05:52.470 --> 06:00.940
+So I'm going to have to say import subprocess So this literally tells Python that I want to use the
+
+06:00.940 --> 06:02.340
+subprocess module.
+
+06:02.470 --> 06:09.960
+Import all the functions that I can use with this module once they do that I'm going to use the module
+
+06:09.960 --> 06:12.740
+by doing a subprocess.
+
+06:12.800 --> 06:14.270
+So this is the module name.
+
+06:14.480 --> 06:20.870
+And then I'm going to put a dot and you can see as soon as I put the dot PI charme automatically shows
+
+06:20.870 --> 06:24.700
+me all the functions that I can use with this module.
+
+06:24.710 --> 06:28.870
+So these are similar to the functions that you see in here.
+
+06:29.030 --> 06:35.270
+Now like I said the one that I want to use is called Call and again as you can see as soon as I type
+
+06:35.270 --> 06:41.140
+called it shows me the arguments or the inputs that this function takes.
+
+06:41.540 --> 06:47.390
+So I'm going to enter to select this function and it'll auto fill the brackets for me and it's going
+
+06:47.390 --> 06:51.470
+to give me a description on how to use this module.
+
+06:51.500 --> 06:53.020
+Now I know how to use it.
+
+06:53.030 --> 07:00.290
+I'm just going to move my character to the middle and in here we're going to put our command between
+
+07:00.290 --> 07:02.340
+two quotation marks.
+
+07:02.810 --> 07:05.060
+So this is a very simple example.
+
+07:05.060 --> 07:09.400
+So all we're going to do is just run if config.
+
+07:09.480 --> 07:17.160
+Now we know if conflict shows us the interfaces that are available to our current operating system.
+
+07:17.160 --> 07:22.590
+And finally we're going to put a comma and add the shell argument.
+
+07:23.190 --> 07:30.810
+And we're going to set that to true so that we can run shell commands through this function and that's
+
+07:30.810 --> 07:31.100
+it.
+
+07:31.110 --> 07:32.570
+Our code is done.
+
+07:32.610 --> 07:38.850
+So as you can see it's a very very simple code and all it's going to do is it's going to import the
+
+07:38.850 --> 07:46.710
+subprocess module first then we're using the subprocess module and we're adding dot call and this is
+
+07:46.710 --> 07:52.800
+the same way with all modules you put the module name first followed by the function that you want to
+
+07:52.800 --> 07:55.560
+use that's stored in this module.
+
+07:55.590 --> 08:01.380
+So we're using the call function and we're given at the first argument as the command that we want to
+
+08:01.380 --> 08:02.250
+execute.
+
+08:02.460 --> 08:06.150
+And in our case right now we run we want to run ifconfig.
+
+08:06.450 --> 08:12.270
+And secondly we're giving it the second argument which sets the shell variable to true.
+
+08:12.360 --> 08:16.050
+So we can run Linux commands through this function.
+
+08:16.050 --> 08:19.870
+Now you can see that pie chart is telling me that there is something wrong with this.
+
+08:20.040 --> 08:28.160
+And what's wrong in here is that shell should be a small as not a capital as and this is fine right
+
+08:28.160 --> 08:29.150
+now.
+
+08:29.150 --> 08:34.430
+Now I'm going to save this by doing controlled s and then we're going to run it.
+
+08:34.430 --> 08:40.230
+You can run it from terminal or we can just go to run and run.
+
+08:40.450 --> 08:44.680
+And we're going to select the script which is marked changer.
+
+08:44.680 --> 08:52.210
+And as you can see now the script got executed in here and it just listed for me the result of ifconfig
+
+08:52.240 --> 08:55.150
+so you can see that it executed if conflict for me.
+
+08:55.450 --> 09:02.350
+And then we see all the interfaces that are available to the current operating system.
+
+09:02.350 --> 09:07.600
+So this is a very simple example I just wanted to show you how to import a module and run a very simple
+
+09:07.600 --> 09:13.210
+system command and then in the next lecture this is going to make more sense because we're going to
+
+09:13.210 --> 09:17.150
+use it to write a script that will change the MAC address for us.
