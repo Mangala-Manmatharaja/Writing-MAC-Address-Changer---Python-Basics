@@ -1,0 +1,169 @@
+WEBVTT
+
+00:01.160 --> 00:07.970
+OK now that we know how to create variables how to initialize them and how to use them within a string
+
+00:08.570 --> 00:12.920
+using the variables within our previous code should be very very easy.
+
+00:13.010 --> 00:14.520
+And I'll show you why.
+
+00:15.020 --> 00:20.540
+First of all I'm going to uncomment these statements because Python is ignoring them now.
+
+00:20.540 --> 00:26.450
+And to do that you can manually just remove the hash in front of the lines or just highlight the lines
+
+00:26.450 --> 00:31.460
+that you want to uncomment and press control and forward slash.
+
+00:31.460 --> 00:32.820
+Now this is done.
+
+00:33.560 --> 00:40.090
+If you look at the code here you can see the first part of this function is actually a string.
+
+00:40.160 --> 00:45.030
+So it's a sequence of characters enclosed by two quotation marks.
+
+00:45.110 --> 00:51.260
+Therefore if we want to replace this with the value that stored in this variable we have to do with
+
+00:51.350 --> 00:55.200
+the same way that we did it in our print statement.
+
+00:55.310 --> 01:02.960
+So all we have to do here is we have to close the quotation marks the strings and we have to append
+
+01:03.020 --> 01:06.700
+or put our variable in the middle of the string like so.
+
+01:07.700 --> 01:10.640
+So it's very similar to the way that we're using it in here.
+
+01:10.640 --> 01:14.700
+And this print statement again we have to do it in this line.
+
+01:20.560 --> 01:22.020
+And same for this line
+
+01:28.400 --> 01:28.880
+and that's it.
+
+01:28.880 --> 01:35.450
+Now whenever Python runs it's going to replace interface here with the value that we initialize it to
+
+01:35.540 --> 01:37.310
+in here.
+
+01:37.310 --> 01:40.720
+One more thing that we need to do is use the Neumark.
+
+01:41.090 --> 01:46.250
+So I actually modified this code in the previous lecture to show you the difference of using the variable
+
+01:46.310 --> 01:48.920
+inside and outside the quotation marks.
+
+01:48.980 --> 01:51.730
+So I'll just fix this here.
+
+01:52.170 --> 01:54.570
+And we also need to use it in here.
+
+01:54.800 --> 01:58.780
+And again all we have to do is just append the code in here.
+
+01:58.880 --> 02:00.080
+So I'm removing the.
+
+02:00.110 --> 02:07.590
+That's hard coded within the string and then I'm going to append the new Mike to the string.
+
+02:09.160 --> 02:15.310
+So as you can see now we're actually using the same concept that we used when we were using the variable
+
+02:15.520 --> 02:22.100
+within the print statement and that's why I was saying it's very useful to get into the habit of printing
+
+02:22.330 --> 02:26.350
+your variables and using the print function.
+
+02:26.350 --> 02:30.910
+Also sometimes it's a good idea if you're running system commands like this.
+
+02:30.940 --> 02:37.210
+Maybe you can just print this right here so you can just copy this and use it in a print statement and
+
+02:37.210 --> 02:43.820
+make sure that your command is being interpreted by Python the way that you want it to look like.
+
+02:43.970 --> 02:45.760
+So I'm going to save this.
+
+02:46.090 --> 02:49.190
+And let's run our code and see what happens.
+
+02:50.370 --> 02:53.150
+So my current Mac address ends with 6:6.
+
+02:53.190 --> 03:00.750
+As you can see here and if we run our program you can see it's giving us a nice print statement and
+
+03:00.750 --> 03:09.180
+then if we do if can glance 0 you'll see the MAC address has changed to 7.
+
+03:09.180 --> 03:15.390
+Now what's really handy with using the variables is let's say you want to change the MAC address of
+
+03:15.390 --> 03:16.420
+a different interface.
+
+03:16.440 --> 03:22.350
+Not for land zero you would have had to change the value in all of the commands in here.
+
+03:22.350 --> 03:27.360
+And if you have a bigger code than you would have had to went and looked for every single time you use
+
+03:27.360 --> 03:30.480
+that value and change it to the new value.
+
+03:30.900 --> 03:38.190
+Whereas in our code let's say I want to change the MAC address of 88 0 which is another interface that
+
+03:38.190 --> 03:39.080
+I have here.
+
+03:39.090 --> 03:46.690
+So if I do if config it to 0 you can see its MAC address ends with 7 7 Actually now.
+
+03:46.710 --> 03:49.810
+So let's change the Neumark and make it.
+
+03:49.830 --> 03:54.920
+And with 8 8 and run our code.
+
+03:55.280 --> 04:03.250
+Now if we do if conflict it is zero again as you can see the MAC address changed to the new value.
+
+04:03.740 --> 04:09.170
+So instead of going through the whole code and changing the value for line zero all we have to do is
+
+04:09.170 --> 04:13.520
+just change it in here and said that to eat 0.
+
+04:13.520 --> 04:15.720
+Same goes for change in the Neumark.
+
+04:15.740 --> 04:22.230
+If you had a big code you would have had to look which line of this code change the MAC address instead.
+
+04:22.250 --> 04:27.550
+If you have everything here on the top or in one place then it's very easy for you to change it and
+
+04:27.560 --> 04:29.960
+not to worry where this variable is used.
+
+04:29.960 --> 04:35.180
+All you have to do is just change its value here and then it'll change all over the code.
