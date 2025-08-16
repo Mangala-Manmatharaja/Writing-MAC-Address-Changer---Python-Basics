@@ -1,0 +1,235 @@
+WEBVTT
+
+00:01.150 --> 00:03.460
+Now what you've done so far is pretty good.
+
+00:03.460 --> 00:10.570
+We can use variables now to change the MAC address to any mac address we want easily and to any interface.
+
+00:11.290 --> 00:17.770
+But every time the user wants to change these variables they have to open the code they have to open
+
+00:18.040 --> 00:23.800
+the program and modify its code manually which is not very good.
+
+00:23.800 --> 00:31.210
+It'll be nicer if we can get the user to input the variables that they want through the terminal.
+
+00:31.210 --> 00:34.040
+So there are a number of ways to do that.
+
+00:34.180 --> 00:39.520
+And in this lecture we're going to talk about the import function.
+
+00:39.520 --> 00:45.960
+So we have to do is just use the input function like so put a string that will be displayed to the user.
+
+00:45.970 --> 00:52.750
+So for example ask for your age and then initialize that to be stored in a variable called anything
+
+00:52.780 --> 00:53.280
+we want.
+
+00:53.290 --> 00:57.670
+And in this example we're calling it age then the user is going to see this.
+
+00:57.670 --> 00:58.900
+What's your age.
+
+00:59.080 --> 01:04.240
+If they import for example 10 then 10 will be stored in this variable.
+
+01:04.240 --> 01:06.980
+And then we can print it again.
+
+01:07.000 --> 01:08.380
+This is very boring.
+
+01:08.410 --> 01:15.790
+So what we're going to do is we're going to use something within our cool code and ask the user to enter
+
+01:15.790 --> 01:20.620
+the interface and then you mark and then use it in here.
+
+01:20.620 --> 01:27.160
+So we already have a variable called interface and all we have to do instead of initializing it like
+
+01:27.160 --> 01:27.680
+this.
+
+01:27.790 --> 01:31.150
+We want the user to put this value for us.
+
+01:31.660 --> 01:37.750
+So instead of initializing it and saying it you are here we're going to say the interface is going to
+
+01:37.750 --> 01:41.220
+equal to the input that the user will give me.
+
+01:43.430 --> 01:49.310
+And inside this we're going to put the text that the user will see.
+
+01:49.460 --> 01:54.940
+So we're going to ask for the interface.
+
+01:55.130 --> 01:56.610
+Same goes for the Mac.
+
+01:56.840 --> 02:03.470
+So instead of initializing the Mac within the code like this we're going to say Neumark is going to
+
+02:03.470 --> 02:04.600
+equal two.
+
+02:04.830 --> 02:10.090
+And I want that to be taken from the user input so using the input function.
+
+02:10.580 --> 02:15.260
+And I want the user to see a message asking for the Neumark.
+
+02:15.260 --> 02:20.990
+So in that message I'm going to say new Mac and that's it.
+
+02:21.010 --> 02:25.500
+We're going to start this and let's run it and see what it's going to look like.
+
+02:26.110 --> 02:28.350
+So Python might change your not.
+
+02:28.350 --> 02:29.160
+Why.
+
+02:29.230 --> 02:32.720
+And as you can see the program will not execute further code.
+
+02:32.810 --> 02:37.250
+It will stop and it will first ask me for the interface.
+
+02:37.750 --> 02:45.670
+So whenever I put Lan's zero in here this will automatically initialize interface to line 0 because
+
+02:45.670 --> 02:53.230
+you said interface equals input and I'm given the input in here so the user is given the input themselves
+
+02:53.290 --> 02:55.210
+through the terminal.
+
+02:55.210 --> 03:02.390
+Now if I enter now we get an error because this is actually a Python 3 function.
+
+03:02.570 --> 03:10.310
+So we have to say Python 3 in here because if you just type python it'll run with Python 2.7.
+
+03:10.310 --> 03:14.020
+So we run this again as asking me for the interface.
+
+03:14.150 --> 03:16.670
+We set down to zero.
+
+03:16.700 --> 03:22.220
+Now the code will stop again and it asks me for the Neumark.
+
+03:22.400 --> 03:32.870
+So we're going to set that 0 0 1 1 2 2 3 3 4 4 and I'm going to go for 4:4 again to just use something
+
+03:32.870 --> 03:35.510
+different to make sure that this code is going to work.
+
+03:35.990 --> 03:41.270
+And now it's already the code has already initialized interface with LAN 0.
+
+03:41.510 --> 03:47.450
+Once I hit Enter it's going to initialize Neumark with the value that I just inputted which is the Neumark
+
+03:47.990 --> 03:53.680
+then is going to use it in here and in here exactly the same way as before.
+
+03:53.690 --> 03:55.920
+So let's set enter and see what happens.
+
+03:57.590 --> 04:02.410
+It's print in the right print statement for also sell on us that it's change your MAC address for line
+
+04:02.600 --> 04:05.330
+zero to this MAC address.
+
+04:05.330 --> 04:06.720
+So again the print statement.
+
+04:06.770 --> 04:13.730
+It's a really good way of knowing that interface and Neumark actually hold the values that we want so
+
+04:13.730 --> 04:17.400
+they hold the values that the user did actually input.
+
+04:17.540 --> 04:23.300
+Because when your code gets more complicated you can make mistakes and maybe the variables will not
+
+04:23.300 --> 04:25.940
+hold the value that you expect them to hold.
+
+04:26.390 --> 04:32.560
+So let's do it config line zero and see if the map changed.
+
+04:32.590 --> 04:38.060
+And as you can see it actually did get changed to the MAC address that we want.
+
+04:38.200 --> 04:45.910
+Now going back to this error we got this because we were running the code used in Python 2.7 not Python
+
+04:45.910 --> 04:47.020
+3.
+
+04:47.080 --> 04:50.390
+Like I said these two versions are very very similar.
+
+04:50.650 --> 04:57.490
+So if you want this code to run with Python 2.7 all you have to do is just type pro input instead of
+
+04:57.490 --> 04:58.120
+input.
+
+04:58.330 --> 05:02.160
+So it's just the function has a different name.
+
+05:02.260 --> 05:06.030
+So we change that to raw input and we change that to raw input
+
+05:10.130 --> 05:11.310
+going down.
+
+05:11.540 --> 05:19.130
+And we're just going to run at this time with Python not Python 3 had Antar asked me for the interface.
+
+05:19.370 --> 05:31.960
+Let's set it to Etihad zero this time and said the new Mach 2 0 0 1 1 2 2 3 3 4 4 2 2 enter.
+
+05:32.030 --> 05:37.400
+We get the right values in the print statement the right interface and the right MAC address.
+
+05:37.490 --> 05:46.770
+And if we do ifconfig 88 0 you can see the MAC address changed to 4:4 2 to the same MAC address that
+
+05:46.770 --> 05:48.710
+we said in here.
+
+05:49.460 --> 05:54.700
+So this just goes to show you that Python 2.7 and 3 are very similar.
+
+05:54.800 --> 05:58.370
+Once you know one of them you can use the other.
+
+05:58.370 --> 05:59.850
+So that's it for this lecture.
+
+05:59.990 --> 06:07.220
+I just wanted to introduce the input or the raw input function that allows the user to initialize variables
+
+06:07.430 --> 06:10.220
+or interact with the program through the terminal.
+
+06:10.220 --> 06:16.040
+So when they actually run the program instead of having to manually modify the code every time they
+
+06:16.040 --> 06:17.390
+need to change a variable.
