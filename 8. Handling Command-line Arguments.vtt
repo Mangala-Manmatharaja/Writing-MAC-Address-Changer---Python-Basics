@@ -1,0 +1,328 @@
+WEBVTT
+
+00:01.400 --> 00:10.520
+Now previously we learned how to allow the user to set variables using the input and the raw input functions.
+
+00:10.520 --> 00:16.550
+These are really handy but I think they make more sense if you want to ask the user for something in
+
+00:16.550 --> 00:19.300
+the middle of the execution of the program.
+
+00:19.520 --> 00:23.940
+Something similar to what the social engineering toolkit does.
+
+00:24.290 --> 00:31.220
+But I think for a simple program like this one it would make more sense if we can get our user to input
+
+00:31.220 --> 00:33.730
+the values as arguments.
+
+00:33.740 --> 00:39.380
+So what I mean by arguments is itll be cool if we can allow the user to do something like Python.
+
+00:39.380 --> 00:47.850
+Mike Mark change your daughter Pyu II and then give me the values by do an interface so to land zero
+
+00:48.380 --> 00:53.480
+and then do my work and give me the Neumark.
+
+00:53.540 --> 00:56.730
+Now we actually want to implement something like this.
+
+00:56.750 --> 01:02.780
+Its not going to be easy because first of all we need to implement some way of reading all of this.
+
+01:02.780 --> 01:05.930
+Everything that comes after the command.
+
+01:06.290 --> 01:13.670
+We also need to be able to read the option names or the arguments here and we need to read the option
+
+01:13.670 --> 01:16.490
+values which is nonzero and then you.
+
+01:16.850 --> 01:22.820
+And we also need to display a help message for the person when they don't give arguments or when they
+
+01:22.820 --> 01:24.050
+ask for help.
+
+01:24.260 --> 01:32.010
+For example with all of the known commands if you just do ifconfig help you'll get a long menu showing
+
+01:32.060 --> 01:37.220
+the help and how to use all of the arguments that come with the ifconfig command.
+
+01:37.910 --> 01:39.410
+So you can do this.
+
+01:39.410 --> 01:46.640
+Its possible that you can write all of this yourself or you can just use an already made module by Python
+
+01:47.480 --> 01:49.830
+and that's what we're going to do.
+
+01:49.850 --> 01:55.180
+So in order to use a module just like subprocess we need to import that module.
+
+01:55.580 --> 02:04.860
+So to do that we're going to do import module name which is to parse so odd parse is the name of the
+
+02:04.860 --> 02:13.050
+module that allows us to get arguments from the user and parse them and use them within our code.
+
+02:13.050 --> 02:19.770
+Now important the model doesn't mean that your program is going to automatically use it as you can see
+
+02:19.770 --> 02:25.530
+it's actually written in gray right now and it's telling us that it's unused because we never used this
+
+02:25.530 --> 02:27.630
+module with our code.
+
+02:27.630 --> 02:33.780
+So when you import something you tell Python that I'm going to use some code that exists within this
+
+02:33.780 --> 02:39.900
+module but you actually have to call it within your code to use it similar to the subprocess when we
+
+02:39.900 --> 02:41.070
+call it in here.
+
+02:42.470 --> 02:50.420
+So the next step now is to call this module and get our program to recognize user input and parse it
+
+02:51.870 --> 02:52.680
+to do this.
+
+02:52.680 --> 03:00.330
+We're going to create a parser object so you can think of this object as an entity or a person that
+
+03:00.660 --> 03:06.480
+knows everything about parsing and arguments and can handle all of that itself.
+
+03:06.510 --> 03:12.840
+So it's a person or an entity that we're going to use in our program that will handle user input for
+
+03:12.840 --> 03:14.280
+us.
+
+03:14.370 --> 03:22.990
+So to create this object or this entity we're going to say parser equals Obed parse which is the name
+
+03:22.990 --> 03:31.840
+of the module that we just imported and we want to create an option parser now parser.
+
+03:31.840 --> 03:34.100
+Here is just another variable.
+
+03:34.180 --> 03:38.200
+So it's similar to interface and Neumark.
+
+03:38.200 --> 03:44.260
+The difference is the value that it holds is different than the value that's held in here.
+
+03:44.260 --> 03:50.270
+So for example interface here gets whatever value that is returned by zero input.
+
+03:50.500 --> 03:57.400
+And there are impot returns whenever the person enters and the person enters a sequence of characters
+
+03:57.400 --> 03:59.170
+for the name of the interface.
+
+03:59.230 --> 04:07.180
+So the interface usually holds a value of a string a sequence of characters parser on the other hand
+
+04:07.470 --> 04:13.890
+is going to hold the value of whatever over parse that option parser returns.
+
+04:13.900 --> 04:17.440
+Now notice the name here starts with a capital letter.
+
+04:17.440 --> 04:19.970
+This is a naming convention in Python.
+
+04:20.200 --> 04:28.000
+And basically everything that starts with a capital letter means that it is a class and while a class
+
+04:28.060 --> 04:35.520
+is it's basically code or you can think of it as rules or a blueprint for the object.
+
+04:35.590 --> 04:39.900
+So it determines what we can do with the parser object.
+
+04:39.910 --> 04:43.900
+It's basically all the code that can read the user input.
+
+04:43.900 --> 04:51.250
+Like I said in here when you do interface for example it's all the code that displays the health message
+
+04:51.430 --> 04:57.760
+it's all the code that stores the values that the user enters all of it is stored in the option parser
+
+04:57.760 --> 05:01.110
+class which you can't use the class as is.
+
+05:01.180 --> 05:04.070
+You need to create an instance of that class.
+
+05:04.390 --> 05:11.080
+And that's what we're doing here we're creating an entity or an object and that object is stored in
+
+05:11.080 --> 05:13.150
+the parser variable.
+
+05:13.150 --> 05:16.420
+Now again we're going to be use an object a lot throughout the course.
+
+05:16.420 --> 05:19.840
+And as we use them it will become clearer.
+
+05:19.840 --> 05:27.490
+So right now we created an instance of the option parser class which is an object that can handle parsing
+
+05:27.490 --> 05:29.470
+for us.
+
+05:29.500 --> 05:36.910
+Now you can think of this parser object as a child so it has all the abilities that it inherits from
+
+05:36.970 --> 05:43.990
+its father which is the class to handle parsing but since it's a child we still need to tell it what
+
+05:43.990 --> 05:48.560
+kind of arguments to look for and how to handle them.
+
+05:48.640 --> 05:59.120
+So we're going to start teaching this child by doing parser that option and basically what we're doing
+
+05:59.120 --> 06:05.770
+now is we're giving it the first argument that it can expect from users.
+
+06:05.870 --> 06:13.000
+So this argument is going to be dush are way to specify the interface.
+
+06:13.180 --> 06:20.590
+We're also going to say the user can either give you dush II or they can give you dash dash interface
+
+06:20.860 --> 06:29.540
+to specify the interface then we're going to say this equals interface.
+
+06:29.820 --> 06:31.160
+And what we're doing.
+
+06:31.200 --> 06:37.970
+What we mean by Desk is this is the name where the value of the interface is going to be stored.
+
+06:38.160 --> 06:43.270
+So this is how we're going to be retrieving the user input again.
+
+06:43.320 --> 06:48.450
+Let's keep doing this and it's going to become clearer once we actually get it done.
+
+06:48.450 --> 06:55.800
+Finally we're going to get the help message to display to the user if they require help and we're going
+
+06:55.800 --> 06:59.520
+to set that to interface to change.
+
+06:59.530 --> 07:03.400
+It's Mike address.
+
+07:04.070 --> 07:04.570
+OK.
+
+07:04.710 --> 07:06.840
+So it's very very simple so far.
+
+07:07.050 --> 07:12.180
+So all we're doing is we're teaching this person or object or child we're telling it that I want you
+
+07:12.180 --> 07:20.730
+to allow the user to enter a value that's value they can enter it and they're the dash or dash dash
+
+07:20.790 --> 07:24.860
+interface argument whatever value they enter.
+
+07:24.870 --> 07:28.810
+I want you to store it on their interface.
+
+07:29.100 --> 07:37.980
+And if the user requires help then display this help message to explain what this argument is.
+
+07:38.000 --> 07:44.830
+Finally we're going to tell this child to parse the arguments that it gets from the user.
+
+07:44.960 --> 07:49.500
+So to do that we're going to say parser dot.
+
+07:49.790 --> 07:55.460
+And as you can see when you actually press the dot Percheron will automatically show you all the methods
+
+07:55.730 --> 07:59.340
+that you can invoke on this object or this child.
+
+07:59.630 --> 08:05.470
+So what we wanted to do is we just wanted to learn or understand what it got so far.
+
+08:05.510 --> 08:08.990
+So we wanted to parse arguments.
+
+08:08.990 --> 08:16.070
+Now let's go down to our program and all I'm going to do is I'm just going to do Python might change
+
+08:16.070 --> 08:21.440
+or that why and I'm just going to do a dash dash help.
+
+08:21.440 --> 08:23.170
+OK so this is perfect.
+
+08:24.450 --> 08:31.590
+Now because we're use an odd parse and because we created the option parser here you can see that our
+
+08:31.590 --> 08:37.170
+program automatically displays and help message when we do dash dash help.
+
+08:37.650 --> 08:43.440
+You can see that this message is given us the usage so saying we can use this program by do a mike changer
+
+08:43.450 --> 08:48.140
+that p y followed by the options and the options are.
+
+08:48.140 --> 08:53.580
+You can either do dash H or dash dash help to see this help message.
+
+08:54.030 --> 09:02.370
+Or you can do this option and this option is the first option that we created in here and added using
+
+09:02.370 --> 09:07.450
+the ADD option method so you can see that a still must use this option.
+
+09:07.470 --> 09:11.910
+You can either use dash or dash dash interface.
+
+09:12.510 --> 09:14.520
+So this is what we set in here.
+
+09:14.550 --> 09:19.530
+We said to use either dash or dash dash interface.
+
+09:20.040 --> 09:25.890
+You can also see the health message that we set in here is being displayed in here telling the user
+
+09:25.890 --> 09:32.130
+that you can use this option to set the interface to change its MAC address.
+
+09:32.130 --> 09:33.120
+Now this is perfect.
+
+09:33.120 --> 09:34.980
+This is exactly what we wanted.
+
+09:35.250 --> 09:41.340
+And in the next lecture we'll learn how to add more options to this and how to use the values that the
+
+09:41.340 --> 09:43.710
+user input into our program.
