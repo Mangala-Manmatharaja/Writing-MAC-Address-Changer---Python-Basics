@@ -1,0 +1,346 @@
+WEBVTT
+
+00:01.400 --> 00:07.310
+Now so far we built a good enough program that can take user input and based on it.
+
+00:07.430 --> 00:14.150
+It changes the MAC address of the interface that the user specifies to the MAC address that they choose.
+
+00:14.210 --> 00:18.810
+What I don't like about it right now though is it looks a little bit messy.
+
+00:18.980 --> 00:21.990
+And I think it can really use some refactoring.
+
+00:22.370 --> 00:28.890
+Therefore I think this is a great opportunity to introduce you to functions.
+
+00:29.210 --> 00:35.630
+Now functions are used everywhere in programming and we've actually used them in previous lectures even
+
+00:35.630 --> 00:36.960
+without you thinking.
+
+00:37.280 --> 00:44.660
+So for example when we used to use the input or the input that was a function that displays on screen
+
+00:44.690 --> 00:51.590
+whatever we put in here and returns whatever the user inputs and then we used to capture that and store
+
+00:51.590 --> 00:54.280
+it in a variable.
+
+00:54.300 --> 01:02.920
+So what we mean by a function is it's a set of instructions that carry out a certain task like we've
+
+01:02.920 --> 01:03.760
+seen before.
+
+01:03.810 --> 01:05.110
+It can take an input.
+
+01:05.130 --> 01:12.420
+So for example I can hear the input or the arrow input takes a string as input and displays it on screen
+
+01:13.140 --> 01:15.100
+and it can return a value.
+
+01:15.270 --> 01:22.170
+And again we've seen that this returns the value of whatever that person enters using their keyboard.
+
+01:22.170 --> 01:28.650
+Now the reason why we use functions is because first of all they make our code look pretty and we'll
+
+01:28.650 --> 01:29.100
+see that.
+
+01:29.100 --> 01:33.810
+Now once we use it it also makes our code reusable.
+
+01:33.870 --> 01:40.650
+So we've seen before that we use the input function twice in our code to ask for the interface and for
+
+01:40.650 --> 01:49.040
+the MAC address without that function we would have had to write the code for the input function twice.
+
+01:49.320 --> 01:56.040
+It also makes our code or makes programming more abstract because when we use the input for example
+
+01:56.340 --> 01:58.270
+we don't even know how it works.
+
+01:58.290 --> 02:01.090
+We don't know the code used in this function.
+
+02:01.320 --> 02:03.970
+All we know is I need to give it a string.
+
+02:04.080 --> 02:10.350
+This ring that I gave will be displayed on screen and then the function will work and ask the user to
+
+02:10.350 --> 02:15.440
+enter something whenever the user enters something the function will give it back to me.
+
+02:15.660 --> 02:19.920
+I don't know the code behind the input function itself.
+
+02:19.920 --> 02:22.140
+Whoever wrote it wrote it very well.
+
+02:22.140 --> 02:24.630
+And now all of us are using it.
+
+02:24.840 --> 02:28.500
+So you need to use the same idea when you program.
+
+02:28.560 --> 02:35.640
+So whenever you have a block of code in your program for example right here we have a block of code
+
+02:35.940 --> 02:38.310
+that changed the MAC address.
+
+02:38.310 --> 02:45.270
+Now we know that this code works very well and if we bundled this inside the function then we can reuse
+
+02:45.270 --> 02:51.960
+this function any number of times even in the future if we write bigger programs and need to be able
+
+02:51.960 --> 02:54.800
+to change the MAC address from within that program.
+
+02:55.020 --> 03:00.380
+Then we can just call this function instead of having to type its code again.
+
+03:00.750 --> 03:06.990
+Not only that but we can also bundle this in a separate file and then we can just import this the same
+
+03:06.990 --> 03:12.290
+way that we import subprocess right here and call a marked change or function.
+
+03:12.450 --> 03:18.150
+So we won't even have to worry about the code written in this function maybe in a year or two year or
+
+03:18.150 --> 03:19.830
+five year time from now.
+
+03:19.830 --> 03:23.280
+You want to be able to use a code that changes the MAC address.
+
+03:23.490 --> 03:24.880
+You want to rewrite it.
+
+03:24.960 --> 03:28.430
+You won't even have to remember how to change the MAC address.
+
+03:28.470 --> 03:32.370
+All you have to do is just call the function that you created before.
+
+03:33.950 --> 03:40.610
+So let's try and bundle all of this inside the function and use it from our code.
+
+03:40.610 --> 03:49.280
+Now first of all you can define a function like so you just have to typedef followed by the function
+
+03:49.280 --> 03:53.980
+name and it's a good idea to use meaningful function names.
+
+03:54.110 --> 04:00.100
+So we'll call this function change Mark OK.
+
+04:00.260 --> 04:06.530
+Now followed by this you need to put two brackets on between these two brackets.
+
+04:06.530 --> 04:10.580
+We're going to specify the input that this function takes.
+
+04:10.580 --> 04:13.450
+Again going back to the input function.
+
+04:13.670 --> 04:19.760
+This function used to take a string as an input and then do stuff with it and display it on screen.
+
+04:19.790 --> 04:28.840
+As we know so one who are defining our function here we need to specify what inputs it takes.
+
+04:29.000 --> 04:35.630
+So we know in order to change the MAC address we need an interface and we need a MAC address.
+
+04:35.630 --> 04:41.420
+So we're going to call these interface and new Mac.
+
+04:42.020 --> 04:44.630
+Again the names here are completely up to you.
+
+04:44.690 --> 04:50.840
+You can use any name that you find suitable You can use x and y if you wanted as long as they are valid
+
+04:50.870 --> 04:52.820
+variable names.
+
+04:52.820 --> 04:59.810
+Once you define the function name and the inputs that it takes all you have to do is just put call on
+
+04:59.810 --> 05:04.170
+here at the end of the line and then hit enter.
+
+05:04.190 --> 05:11.530
+Now you'll see automatically PI charme has indented this and put a tab for our cursor.
+
+05:11.570 --> 05:17.440
+This is to show that everything that we're going to right now is going to be part of the change Mark
+
+05:17.450 --> 05:21.610
+function and it's going to be part of this block of code.
+
+05:21.620 --> 05:26.960
+Now the goal of this function to change the MAC address and we already know the instructions to change
+
+05:26.960 --> 05:27.720
+the MAC address.
+
+05:27.740 --> 05:30.090
+It's these instructions right here.
+
+05:30.530 --> 05:40.930
+So I'm just going to cut them control X and paste them here what's very important to note is all of
+
+05:40.930 --> 05:47.090
+the code that is part of this function need to be indented the same indention in here.
+
+05:47.350 --> 05:50.110
+So all of the code that started here.
+
+05:50.140 --> 05:58.420
+This is part of the normal Python program or script everything that's indented in here is part of the
+
+05:58.420 --> 06:00.480
+change Mark function.
+
+06:00.490 --> 06:06.320
+This is how Python separates blocks of code based on indention.
+
+06:06.580 --> 06:07.120
+That's it.
+
+06:07.120 --> 06:10.630
+Now our function is done we have a function called Change Mike.
+
+06:10.660 --> 06:12.960
+It takes an interface and a new mark.
+
+06:13.210 --> 06:18.700
+And whenever we call this function it will execute all the instructions in here.
+
+06:18.760 --> 06:24.250
+So if we don't call this nothing is going to happen let me show you what I mean.
+
+06:24.630 --> 06:31.150
+If I go down on my Python program and run the same command that we use to run before and let's change
+
+06:31.150 --> 06:32.970
+that to 2 at the end.
+
+06:33.730 --> 06:36.520
+You can see that we didn't get a print statement.
+
+06:36.520 --> 06:44.140
+And if I do if config 88 0 you'll see that the MAC address did not change.
+
+06:44.200 --> 06:49.510
+This is because we define the function here but we never use that in here.
+
+06:49.510 --> 06:54.690
+So it's kind of similar to when we import a module but never use it.
+
+06:54.700 --> 07:01.390
+So now what's happened is whenever you run Python it's going to read this read this read that this is
+
+07:01.390 --> 07:08.770
+a function but not execute any of that and then it'll go back in here and start executing from the parser
+
+07:09.260 --> 07:15.910
+it'll read the stuff that the person enters it and parse them to get the interface and all of that but
+
+07:15.940 --> 07:19.140
+it'll never call change mark.
+
+07:19.150 --> 07:27.190
+So all we have to do in here is call change mark now as you can see pie chart automatically knows what
+
+07:27.190 --> 07:30.840
+I need to give to this based on the definition in here.
+
+07:30.900 --> 07:36.970
+So telling me that I need to give it an interface and we know that the value for the interface is stored
+
+07:37.060 --> 07:39.200
+in options dot interface.
+
+07:39.460 --> 07:45.480
+So I'm actually going to use this directly and instead of using the interface variable in here.
+
+07:45.750 --> 07:54.950
+So I'm just going to do options the interface and for the Mark we're going to use options that you Mark
+
+07:56.170 --> 07:59.260
+and I'm going to delete these two lines because we don't need them.
+
+07:59.260 --> 08:05.730
+They just are the value of options that interface and interface and options that Neumark any Neumark.
+
+08:05.980 --> 08:12.460
+But now I'm using it directly I'm using options that interface and options that Neumark in the change
+
+08:12.460 --> 08:14.100
+MAC function.
+
+08:14.110 --> 08:17.220
+So now when Python reaches this line it's going to read OK.
+
+08:17.230 --> 08:19.480
+This is a call for change Mark.
+
+08:19.840 --> 08:26.520
+I'm going to use the interface as the first input here and use Neumark as the second input in here call
+
+08:26.530 --> 08:33.160
+this function execute all of this code which will change the MAC address for me.
+
+08:33.190 --> 08:34.680
+Let's test it out.
+
+08:34.820 --> 08:40.870
+Going down run the same exact command that we did before but it didn't work.
+
+08:40.870 --> 08:47.280
+Right now it printed the statement for me which means that it actually did get into this block of code.
+
+08:47.800 --> 08:55.960
+And then if we do if config 88 0 you'll see that the Mac address the change to the Mac address that
+
+08:55.960 --> 09:00.940
+I want now as you can see the code already looks neater.
+
+09:01.240 --> 09:07.570
+And now every time I need to change the MAC address I won't have to use these four lines anymore.
+
+09:07.720 --> 09:12.450
+All I have to do is just call change mag anywhere I want in my code.
+
+09:12.500 --> 09:16.850
+Given the interface given the Neumark and it'll change it for me.
+
+09:16.930 --> 09:22.990
+Not only that but in the future you'll learn how to put this in a special file and be able to call it
+
+09:22.990 --> 09:25.890
+from any Python program that you want.
+
+09:25.900 --> 09:31.690
+This will allow you to change the MAC address within any program that you write without having to worry
+
+09:31.750 --> 09:38.950
+about the code used in this function something similar to the way that we use import prend row import.
+
+09:39.010 --> 09:39.750
+And so one.
